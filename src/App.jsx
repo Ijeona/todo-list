@@ -29,7 +29,7 @@ function App() {
     setTodos(newTodos);
   }
 
-  const completeTodo = (index) => {
+  const completeToDo = (index) => {
     const newTodos = [...todos];
     newTodos[index].isCompleted = true;
     setTodos(newTodos);
@@ -45,7 +45,7 @@ function App() {
       <div className="todo-list">
         <h1>My todo list</h1>
         {todos.map((todo, index) => (
-          <ToDoItem todo={todo} key={index} index={index} completeTodo={completeTodo} removeToDo={removeToDo} />
+          <ToDoItem todo={todo} key={index} index={index} completeToDo={completeToDo} removeToDo={removeToDo} />
         ))}
         <ToDoForm addTodo={addToDo} />
       </div>
