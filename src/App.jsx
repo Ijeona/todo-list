@@ -25,13 +25,17 @@ function App() {
   //Actions 
 
   const addToDo = (text) => {
-    const newTodos = [...todos, { text: text, incomplete: faslse }];
+    const newTodos = [...todos, { text: text, incomplete: false }];
     setTodos(newTodos);
   }
 
   const completeToDo = (index) => {
     const newTodos = [...todos];
-    newTodos[index].isCompleted = true;
+    if (newTodos[index].isCompleted == false) {
+      newTodos[index].isCompleted = true;
+    } else {
+      newTodos[index].isCompleted = false;
+    }
     setTodos(newTodos);
   };
 
